@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux";
 
-export default class App extends Component {
+ class App extends Component {
   state ={
     message: 'This is from component state'
   }
-  
-  
+ 
   render() {
     return (
       <>
@@ -14,3 +14,9 @@ export default class App extends Component {
     )
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    state: state
+}
+}
+export default connect(mapStateToProps) (App);
